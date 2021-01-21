@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/cobra"
-	"strings"
+	"strconv"
 )
 
 func init() {
@@ -15,6 +15,8 @@ var worldCmd = &cobra.Command{
 	Short: "Hello World",
 	Long:  "Hello The All World",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("image args are : " + strings.Join(args, " "))
+		for i := 0; i < 10000; i++ {
+			fmt.Println("World : " + strconv.Itoa(i))
+		}
 	},
 }
